@@ -22,7 +22,6 @@
   <include package=".vocabularies" />
   <include package=".services" />
 
-  <include file="cors_policy.zcml" />
 
   <!-- -*- extra stuff goes here -*- -->
 
