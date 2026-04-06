@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+  <!--
+    CORS para o Volto chamar o backend (REST) em outro host/porta.
+
+    Checklist alinhado ao frontend:
+    - apiPath no Volto deve ser a base do Plone com API (ex.: http://localhost:8080/Plone),
+      não a URL do próprio Volto; o bloco monta .../@observatorio-rss-feed a partir disso.
+    - allow_origin deve incluir a origem exata do Volto em dev e em produção (esquema +
+      host + porta). Em dev, plone.volto.cors já inclui http://localhost:3000 e
+      http://127.0.0.1:3000. Ajuste abaixo o domínio HTTPS de produção; para outros hosts
+      de dev (ex.: LAN), acrescente-os separados por vírgula em allow_origin.
+    - No navegador (Rede), a chamada GET a .../@observatorio-rss-feed?url=... deve ser 200
+      com JSON {"raw": "..."}.
+
+    Substitua o primeiro valor de allow_origin pelo domínio HTTPS real do frontend em produção.
+  -->
+  <plone:CORSPolicy
+      allow_origin="https://volto.observatorio.gov.br"
+      allow_credentials="true"
+      allow_methods="DELETE,GET,OPTIONS,PATCH,POST,PUT"
+      expose_headers="Content-Length"
+      allow_headers="Accept,Authorization,Content-Type,Origin,Lock-Token"
+      max_age="3600"
+      />
+</configure>

@@ -1,0 +1,37 @@
+// Paleta alinhada ao Design System gov.br (referência: https://www.gov.br/ds/)
+:root {
+  --obs-color-primary: #1351b4;
+  --obs-color-primary-dark: #0c326f;
+  --obs-color-secondary: #168821;
+  --obs-color-accent: #ffcd07;
+  --obs-color-white: #ffffff;
+  --obs-color-text: #333333;
+  --obs-color-muted: #555555;
+  --obs-color-surface: #f8f8f8;
+  --obs-header-border: var(--obs-color-secondary);
+  --obs-focus-ring: #2670e8;
+  /* Rodapé IDG (azul caráter gov.br) */
+  --obs-footer-bg: #071d41;
+
+  /* Logo — faixa branca (SVG/imagem do site) */
+  --obs-logo-max-width: 220px;
+  --obs-logo-max-height: 80px;
+
+  /* Home — faixa hero (gradiente azul) — bloco Hero no CMS */
+  --obs-hero-gradient: linear-gradient(
+    160deg,
+    var(--obs-color-primary) 0%,
+    var(--obs-color-primary-dark) 45%,
+    #0a1f45 100%
+  );
+
+  --obs-hero-btn-primary-bg: #ffcd07;
+  --obs-hero-btn-primary-fg: #1a1a1a;
+
+  /* Bloco notícias RSS — referência estilo portal de notícias */
+  --obs-news-tag-bg: #d9f99d;
+  --obs-news-tag-fg: #0f172a;
+  --obs-news-title: #0f172a;
+  --obs-news-muted: #64748b;
+  --obs-news-placeholder: #e2e8f0;
+}

@@ -1,0 +1,1356 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Tipografia próxima ao DS gov.br (Rawline exige arquivos locais; Open Sans é fallback comum) */
+body {
+  font-family:
+    'Open Sans',
+    'Rawline',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+}
+
+.observatorio-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Cabeçalho — faixa azul (links) + faixa branca (logo + menu + busca) */
+.observatorio-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  background: var(--obs-color-white);
+  color: var(--obs-color-text);
+  /* Sombra só na base do cabeçalho — evita “faixa”/espaço visual entre azul e branco */
+  box-shadow: none;
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Faixa superior — azul */
+  .observatorio-top-bar {
+    margin: 0;
+    padding: 0;
+    background: var(--obs-color-primary);
+    color: #fff;
+  }
+
+  .observatorio-top-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.45rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+  }
+
+  .observatorio-top-bar-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 1rem;
+    font-size: 0.8125rem;
+
+    a {
+      color: #fff !important;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .observatorio-top-bar-util {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem 1rem;
+
+    .tools .ui.button.basic {
+      color: #fff !important;
+      box-shadow: none !important;
+    }
+
+    .tools .ui.button.basic.inverted {
+      color: #fff !important;
+      background: transparent !important;
+    }
+
+    .language-selector a,
+    .language-selector a.selected {
+      color: #fff !important;
+      opacity: 1;
+    }
+  }
+
+  .observatorio-top-bar-brand {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .observatorio-top-bar-search-jump {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.92;
+    }
+  }
+
+  .observatorio-a11y {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: #555;
+
+    &--on-dark {
+      color: rgba(255, 255, 255, 0.95);
+
+      .observatorio-a11y-btn {
+        border-color: rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.22);
+        }
+      }
+    }
+
+    .observatorio-a11y-label {
+      white-space: nowrap;
+    }
+
+    .observatorio-a11y-btn {
+      min-width: 1.85rem;
+      min-height: 1.85rem;
+      padding: 0 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #f5f5f5;
+      color: var(--obs-color-primary);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.75rem;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  /* Faixa principal — branca: logo + nav + busca */
+  .observatorio-main-bar {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .observatorio-main-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.65rem 1.5rem 1rem;
+    min-height: calc(var(--obs-logo-max-height) + 1.5rem);
+    /* Três colunas: logo | menu centralizado | busca (evita sobreposição do flex) */
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+
+      .observatorio-main-search {
+        justify-self: stretch;
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
+
+  .observatorio-main-bar-inner .observatorio-gov-brand {
+    justify-self: start;
+  }
+
+  .observatorio-gov-brand {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  .observatorio-logo-wrap {
+    flex: 0 0 auto;
+    width: var(--obs-logo-max-width);
+    height: var(--obs-logo-max-height);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    a {
+      display: flex !important;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      line-height: 0;
+    }
+
+    img.observatorio-logo,
+    img.ui.image.observatorio-logo {
+      display: block !important;
+      width: var(--obs-logo-max-width) !important;
+      height: var(--obs-logo-max-height) !important;
+      max-width: var(--obs-logo-max-width) !important;
+      max-height: var(--obs-logo-max-height) !important;
+      object-fit: contain;
+    }
+  }
+
+  .observatorio-main-nav {
+    min-width: 0;
+    justify-self: center;
+    width: 100%;
+    max-width: 100%;
+
+    .ui.container {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .ui.secondary.pointing.menu {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      border-bottom: none;
+      margin: 0;
+      min-height: 2.85rem;
+      background: transparent;
+    }
+
+    .ui.secondary.pointing.menu .item {
+      font-weight: 500;
+      font-size: 0.9375rem;
+      padding: 0.65rem 0.85rem;
+      color: #333 !important;
+    }
+
+    .ui.secondary.pointing.menu .item.active {
+      border-bottom-color: var(--obs-color-primary) !important;
+      color: var(--obs-color-primary) !important;
+    }
+  }
+
+  .observatorio-main-search {
+    justify-self: end;
+    width: min(22rem, 100%);
+    min-width: min(12rem, 100%);
+    max-width: 22rem;
+
+    .ui.form {
+      margin: 0;
+    }
+
+    .ui.form .field.searchbox {
+      display: flex;
+      align-items: stretch;
+      min-height: 3rem;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .searchbox input {
+      flex: 1;
+      border: 0 !important;
+      background: transparent !important;
+      padding: 0.7rem 1rem !important;
+      font-size: 1.05rem !important;
+      font-style: italic;
+      color: #555 !important;
+    }
+
+    .searchbox input::placeholder {
+      color: #888;
+    }
+
+    .searchbox button {
+      background: var(--obs-color-primary) !important;
+      border: 0;
+      padding: 0 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 3.25rem;
+
+      &:focus-visible {
+        outline: 2px solid var(--obs-focus-ring);
+        outline-offset: -2px;
+      }
+
+      .icon {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+/*
+ * Vista pública: remove a faixa branca entre o cabeçalho e o primeiro bloco
+ * (ex.: Hero azul). O espaço vinha do padding do Segment .content-area / Container.
+ */
+body.public-ui {
+  .ui.basic.segment.content-area {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .content-area > main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  #page-document {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  #page-document > .block:first-child {
+    margin-top: 0 !important;
+  }
+
+  .observatorio-hero {
+    margin-top: 0 !important;
+  }
+}
+
+body.obs-a11y-font-md {
+  font-size: 106%;
+}
+
+body.obs-a11y-font-lg {
+  font-size: 112%;
+}
+
+/* Bloco Volto “Banner / Hero” — opções de aparência no formulário do bloco */
+.observatorio-hero {
+  width: 100vw;
+  max-width: 100vw;
+  margin-top: 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 2.5rem 1.25rem 3rem;
+  box-sizing: border-box;
+}
+
+.observatorio-hero--bg-theme {
+  background: var(--obs-hero-gradient);
+}
+
+.observatorio-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0.25rem;
+}
+
+.observatorio-hero--py-compact {
+  padding: 1.5rem 1.25rem 1.75rem;
+}
+
+.observatorio-hero--py-normal {
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.observatorio-hero--py-spacious {
+  padding: 3.75rem 1.25rem 4.25rem;
+}
+
+.observatorio-hero-title {
+  margin: 0 0 1rem;
+  max-width: 42rem;
+  font-weight: 700;
+  line-height: 1.2;
+  border: none;
+
+  &::before {
+    display: none;
+  }
+}
+
+.observatorio-hero-title--sm {
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+}
+
+.observatorio-hero-title--md {
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
+}
+
+.observatorio-hero-title--lg {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.observatorio-hero-title--xl {
+  font-size: clamp(1.75rem, 5vw, 2.85rem);
+}
+
+.observatorio-hero-description {
+  margin: 0 0 1.75rem;
+  max-width: 42rem;
+  line-height: 1.55;
+}
+
+.observatorio-hero-description--sm {
+  font-size: 0.9rem;
+}
+
+.observatorio-hero-description--md {
+  font-size: 1.05rem;
+}
+
+.observatorio-hero-description--lg {
+  font-size: 1.2rem;
+}
+
+/* Botões — também usados pelo bloco “Botões / CTAs” (mesmas classes) */
+.observatorio-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.observatorio-hero-actions--left {
+  justify-content: flex-start;
+}
+
+.observatorio-hero-actions--center {
+  justify-content: center;
+}
+
+.observatorio-hero-actions--right {
+  justify-content: flex-end;
+}
+
+.observatorio-hero-actions--space-between {
+  justify-content: space-between;
+}
+
+.observatorio-hero-actions--space-around {
+  justify-content: space-around;
+}
+
+.observatorio-hero-actions--space-evenly {
+  justify-content: space-evenly;
+}
+
+.observatorio-hero-actions--stretch {
+  justify-content: flex-start;
+
+  > a {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.observatorio-hero-actions--gap-compact {
+  gap: 0.35rem 0.5rem;
+}
+
+.observatorio-hero-actions--gap-normal {
+  gap: 0.75rem 1rem;
+}
+
+.observatorio-hero-actions--gap-relaxed {
+  gap: 1rem 1.5rem;
+}
+
+.observatorio-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+  box-sizing: border-box;
+}
+
+.observatorio-hero-btn--size-sm {
+  min-height: 2rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.observatorio-hero-btn--size-md {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.35rem;
+  font-size: 0.95rem;
+}
+
+.observatorio-hero-btn--size-lg {
+  min-height: 3.25rem;
+  padding: 0.65rem 1.5rem;
+  font-size: 1.05rem;
+}
+
+.observatorio-hero-btn--radius-pill {
+  border-radius: 999px;
+}
+
+.observatorio-hero-btn--radius-rounded {
+  border-radius: 6px;
+}
+
+.observatorio-hero-btn--radius-square {
+  border-radius: 0;
+}
+
+/* Cores via estilos inline; variantes = hover / sombra */
+.observatorio-hero-btn--filled {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    filter: brightness(1.04);
+  }
+}
+
+.observatorio-hero-btn--outline {
+  &:hover {
+    filter: brightness(1.06);
+    opacity: 0.96;
+  }
+}
+
+.observatorio-hero-btn--ghost {
+  &:hover {
+    opacity: 0.9;
+    text-decoration: underline !important;
+  }
+}
+
+/* Bloco só botões — mesma largura útil do site */
+.observatorio-cta {
+  width: 100%;
+  padding: 0.35rem 0 0.75rem;
+  box-sizing: border-box;
+}
+
+.observatorio-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Bloco “Notícias dos órgãos (RSS)” — destaque + grade */
+.obs-news {
+  width: 100%;
+  padding: 2.5rem 1.25rem 3rem;
+  background: var(--obs-color-white);
+  color: var(--obs-news-title);
+  box-sizing: border-box;
+}
+
+.obs-news__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.obs-news__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.obs-news__title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--obs-news-title);
+}
+
+.obs-news__intro {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--obs-news-muted);
+}
+
+.obs-news__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 1rem 1.25rem;
+}
+
+.obs-news__toolbar-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: min(100%, 220px);
+}
+
+.obs-news__filter-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--obs-news-muted);
+}
+
+.obs-news__loading {
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.obs-news__error,
+.obs-news__empty {
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--obs-news-muted);
+}
+
+.obs-news__empty--block {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    margin: 0 0 1rem;
+    line-height: 1.5;
+  }
+}
+
+.obs-news__retry-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--obs-color-primary);
+  background: #fff;
+  border: 2px solid var(--obs-color-primary);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    color: #fff;
+    background: var(--obs-color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.obs-news-tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--obs-news-tag-fg);
+  background: var(--obs-news-tag-bg);
+}
+
+.obs-news-featured {
+  margin-bottom: 2rem;
+}
+
+.obs-news-featured__link {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: stretch;
+  text-decoration: none !important;
+  color: inherit;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &:hover .obs-news-featured__title {
+    color: var(--obs-color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 3px;
+  }
+}
+
+.obs-news-featured__media {
+  position: relative;
+  min-height: 220px;
+  background: var(--obs-news-placeholder);
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.obs-news-featured__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.25rem 0;
+}
+
+.obs-news-featured__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--obs-news-title);
+  transition: color 0.15s ease;
+}
+
+.obs-news-featured__lead {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--obs-news-muted);
+  flex: 1;
+}
+
+.obs-news-featured__date {
+  font-size: 0.85rem;
+  color: var(--obs-news-muted);
+}
+
+.obs-news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem 1.25rem;
+}
+
+.obs-news-grid--dense {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .obs-news-featured__link {
+    grid-template-columns: 1fr;
+  }
+
+  .obs-news-grid,
+  .obs-news-grid--dense {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .obs-news-grid,
+  .obs-news-grid--dense {
+    grid-template-columns: 1fr;
+  }
+}
+
+.obs-news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none !important;
+  color: inherit;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+    .obs-news-card__title {
+      color: var(--obs-color-primary);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.obs-news-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--obs-news-placeholder);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.obs-news-card__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.obs-news-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.85rem 0 0;
+  flex: 1;
+}
+
+.obs-news-card__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--obs-news-title);
+  transition: color 0.15s ease;
+}
+
+.obs-news-card__date {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--obs-news-muted);
+}
+
+.obs-news__cta {
+  margin-top: 2.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.obs-news__more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #fff !important;
+  background: var(--obs-color-primary);
+  border: none;
+  transition:
+    filter 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover {
+    filter: brightness(1.06);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Grade de cartões — ministérios / órgãos (bloco observatorioMinistryCards) */
+.obs-ministry-section {
+  padding: 2rem 1.25rem;
+  background: var(--obs-color-white);
+  color: var(--obs-color-text);
+}
+
+.obs-ministry-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.obs-ministry-section__heading {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--obs-color-text);
+  line-height: 1.25;
+}
+
+/* Bloco logo abaixo do título da página (sem título repetido no bloco) */
+.obs-ministry-section--toolbar-below-page-title {
+  padding-top: 0.75rem;
+}
+
+/* Barra de busca / filtro / ordenação (bloco com "Busca e filtros" ativado) */
+.obs-ministry-toolbar {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.125rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: var(--obs-color-surface, #f8fafc);
+}
+
+/* Estilo tipo listagem (faixa com destaque à esquerda) */
+.obs-ministry-toolbar--listing {
+  border-left: 4px solid var(--obs-color-primary);
+}
+
+.obs-ministry-toolbar__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+}
+
+.obs-ministry-toolbar__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.obs-ministry-toolbar__field--narrow {
+  flex: 1 1 160px;
+  max-width: 100%;
+}
+
+.obs-ministry-toolbar__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--obs-color-text);
+}
+
+.obs-ministry-toolbar__input,
+.obs-ministry-toolbar__select {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  color: var(--obs-color-text);
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--obs-color-primary);
+    box-shadow: 0 0 0 3px rgba(19, 81, 180, 0.15);
+  }
+}
+
+.obs-ministry-toolbar__clear {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--obs-color-primary);
+  background: transparent;
+  border: 1px solid var(--obs-color-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    background: rgba(19, 81, 180, 0.08);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.obs-ministry-toolbar__meta {
+  margin: 0.85rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--obs-color-muted);
+}
+
+.obs-ministry-section__empty--filter {
+  border-style: solid;
+  border-color: #e2e8f0;
+}
+
+.obs-ministry-section__empty {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--obs-color-muted);
+  font-size: 0.95rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: var(--obs-color-surface);
+}
+
+.obs-ministry-grid {
+  display: grid;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.obs-ministry-grid--cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.obs-ministry-grid--cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.obs-ministry-grid--auto {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+@media (max-width: 900px) {
+  .obs-ministry-grid--cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .obs-ministry-grid--cols-2,
+  .obs-ministry-grid--cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.obs-ministry-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem;
+  background: var(--obs-color-white);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+  border-top: 3px solid var(--obs-ministry-accent, var(--obs-color-primary));
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
+  }
+}
+
+.obs-ministry-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.obs-ministry-card__emoji-wrap {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.obs-ministry-card__emoji {
+  display: block;
+  line-height: 1;
+}
+
+.obs-ministry-card__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--obs-color-text);
+}
+
+.obs-ministry-card__desc {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--obs-color-muted);
+  flex: 1;
+}
+
+.obs-ministry-card__highlights {
+  margin-bottom: 1.25rem;
+}
+
+.obs-ministry-card__highlights-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--obs-ministry-accent, var(--obs-color-primary));
+}
+
+.obs-ministry-card__list {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--obs-color-text);
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.obs-ministry-card__actions {
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.obs-ministry-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #fff !important;
+  background: var(--obs-color-primary);
+  border: none;
+  transition:
+    filter 0.15s ease,
+    background 0.15s ease;
+
+  &:hover {
+    filter: brightness(1.05);
+    background: var(--obs-color-primary-dark);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--obs-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Rodapé estilo IDG / gov.br — fundo azul escuro, colunas, texto branco */
+#footer.observatorio-footer.ui.segment {
+  position: relative;
+  background: var(--obs-footer-bg) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  text-align: left;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+
+  .ui.container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 2rem 1.25rem 3.25rem !important;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--obs-focus-ring);
+      outline-offset: 2px;
+    }
+  }
+
+  .observatorio-footer-top {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .observatorio-footer-brand {
+    display: inline-block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .observatorio-footer-heading {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .observatorio-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1.75rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 1100px) {
+    .observatorio-footer-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .observatorio-footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .observatorio-footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .observatorio-footer-col li {
+    margin-bottom: 0.65rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .observatorio-footer-site-actions {
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    ul {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+    }
+
+    li {
+      margin: 0;
+      font-size: 0.875rem;
+    }
+  }
+
+  .observatorio-footer-meta {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    opacity: 0.88;
+    max-width: 52rem;
+  }
+
+  .observatorio-footer-backtotop {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--obs-color-primary);
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: var(--obs-color-primary-dark);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--obs-focus-ring);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* Editor Volto — grupo copiar / colar / excluir no canto do bloco */
+.block .obs-block-edit-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.15rem;
+
+  .ui.basic.button {
+    position: static !important;
+    transform: none !important;
+  }
+}

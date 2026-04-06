@@ -1,0 +1,51 @@
+{
+  "name": "volto-observatorio-plone-dev",
+  "version": "1.0.0-alpha.0",
+  "description": "o plataforma de gestão.",
+  "author": "Matheus",
+  "homepage": "https://github.com/matheusdouglaz/observatorio-plone",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "start": "node scripts/run-with-volto-config.cjs --filter @plone/volto start",
+    "start:prod": "node scripts/run-with-volto-config.cjs --filter @plone/volto start:prod",
+    "build": "node scripts/run-with-volto-config.cjs --filter @plone/volto build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "i18n": "pnpm --filter volto-observatorio-plone i18n && node scripts/run-with-volto-config.cjs --filter @plone/volto i18n",
+    "test": "node scripts/run-with-volto-config.cjs --filter @plone/volto test -- --passWithNoTests",
+    "lint": "cross-env VOLTOCONFIG=./volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "cross-env VOLTOCONFIG=./volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
+    "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
+    "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix --allow-empty-input",
+    "dry-release": "pnpm --filter volto-observatorio-plone dry-release",
+    "release": "pnpm --filter volto-observatorio-plone release",
+    "release-major-alpha": "pnpm --filter volto-observatorio-plone release-major-alpha",
+    "release-alpha": "pnpm --filter volto-observatorio-plone release-alpha",
+    "storybook": "node scripts/run-with-volto-config.cjs --filter @plone/volto storybook dev -p 6006 -c ./.storybook",
+    "storybook-build": "node scripts/run-with-volto-config.cjs --filter @plone/volto build-storybook -c ./.storybook"
+  },
+  "dependencies": {
+    "@plone/volto": "workspace:*",
+    "@plone/registry": "workspace:*",
+    "volto-observatorio-plone": "workspace:*"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "mrs-developer": "^2.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+      "react-refresh": "^0.14.2"
+    }
+  },
+  "packageManager": "pnpm@9.15.9"
+}
