@@ -22,6 +22,9 @@ importers:
         specifier: workspace:*
         version: link:packages/volto-observatorio-plone
     devDependencies:
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       mrs-developer:
         specifier: ^2.2.0
         version: 2.3.2
@@ -6909,6 +6912,11 @@ packages:
   coveralls@3.1.1:
     resolution: {integrity: sha512-+dxnG2NHncSD1NrqbSM3dn/lE57O6Qf/koe9+I7c+wzkqRmEvcp0kgJdxKInzYzkICKkFMZsX3Vct3++tsF9ww==}
     engines: {node: '>=6'}
+    hasBin: true
+
+  cross-env@7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
     hasBin: true
 
   cross-spawn@5.1.0:
@@ -21897,6 +21905,10 @@ snapshots:
       log-driver: 1.2.7
       minimist: 1.2.8
       request: 2.88.2
+
+  cross-env@7.0.3:
+    dependencies:
+      cross-spawn: 7.0.6
 
   cross-spawn@5.1.0:
     dependencies:
