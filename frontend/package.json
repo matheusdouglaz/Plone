@@ -16,6 +16,7 @@
     "start": "node scripts/run-with-volto-config.cjs --filter @plone/volto start",
     "start:prod": "node scripts/run-with-volto-config.cjs --filter @plone/volto start:prod",
     "build": "node scripts/run-with-volto-config.cjs --filter @plone/volto build",
+    "build:render": "pnpm --filter @plone/registry build && pnpm build",
     "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
     "i18n": "pnpm --filter volto-observatorio-plone i18n && node scripts/run-with-volto-config.cjs --filter @plone/volto i18n",
     "test": "node scripts/run-with-volto-config.cjs --filter @plone/volto test -- --passWithNoTests",
