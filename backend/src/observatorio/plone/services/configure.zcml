@@ -5,10 +5,10 @@
 
   <plone:service
       method="GET"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       factory=".rss_feed.ObservatorioRSSFeedGet"
-      name="@observatorio-rss-feed"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       permission="zope2.View"
+      name="@observatorio-rss-feed"
       />
 
 </configure>
