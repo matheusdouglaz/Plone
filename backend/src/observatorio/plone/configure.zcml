@@ -13,6 +13,7 @@
 
 
   <include file="dependencies.zcml" />
+  <include file="cors_policy.zcml" />
   <include file="profiles.zcml" />
   <include file="permissions.zcml" />
 
