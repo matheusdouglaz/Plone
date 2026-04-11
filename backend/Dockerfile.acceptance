@@ -29,7 +29,7 @@ LABEL maintainer="Matheus <matheustecnologi@outlook.com>" \
       org.label-schema.description="Observatório Plone backend acceptance image." \
       org.label-schema.vendor="Matheus"
 
-ENV CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,observatorio.plone"
+ENV CONFIGURE_PACKAGES="plone.restapi,plone.volto,observatorio.plone"
 ENV APPLY_PROFILES="observatorio.plone:default"
 
 # Copy /app from builder
