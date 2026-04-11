@@ -7,6 +7,7 @@ FROM plone/server-builder:uv-${PYTHON_VERSION} AS builder
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    --mount=type=bind,source=README.md,target=README.md \
     --mount=type=bind,source=src/observatorio/plone/__init__.py,target=src/observatorio/plone/__init__.py \
     uv sync \
         --locked \
