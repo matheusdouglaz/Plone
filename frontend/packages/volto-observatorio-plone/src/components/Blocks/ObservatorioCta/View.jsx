@@ -13,7 +13,10 @@ const ObservatorioCtaView = ({ data, className, style }) => {
       aria-label="Botões"
     >
       <div className="observatorio-cta-inner">
-        <ObservatorioCtaButtonRow data={data} classNamePrefix="observatorio-hero" />
+        <ObservatorioCtaButtonRow
+          data={data}
+          classNamePrefix="observatorio-hero"
+        />
       </div>
     </div>
   );

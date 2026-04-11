@@ -49,15 +49,24 @@ const messages = defineMessages({
 const alignChoices = (intl) => [
   [
     'left',
-    intl.formatMessage({ id: 'obs.hero.align.left', defaultMessage: 'Esquerda' }),
+    intl.formatMessage({
+      id: 'obs.hero.align.left',
+      defaultMessage: 'Esquerda',
+    }),
   ],
   [
     'center',
-    intl.formatMessage({ id: 'obs.hero.align.center', defaultMessage: 'Centro' }),
+    intl.formatMessage({
+      id: 'obs.hero.align.center',
+      defaultMessage: 'Centro',
+    }),
   ],
   [
     'right',
-    intl.formatMessage({ id: 'obs.hero.align.right', defaultMessage: 'Direita' }),
+    intl.formatMessage({
+      id: 'obs.hero.align.right',
+      defaultMessage: 'Direita',
+    }),
   ],
 ];
 
@@ -96,15 +105,24 @@ const buttonsAlignChoices = (intl) => [
 const buttonSizeChoices = (intl) => [
   [
     'sm',
-    intl.formatMessage({ id: 'obs.hero.btn.size.sm', defaultMessage: 'Pequeno' }),
+    intl.formatMessage({
+      id: 'obs.hero.btn.size.sm',
+      defaultMessage: 'Pequeno',
+    }),
   ],
   [
     'md',
-    intl.formatMessage({ id: 'obs.hero.btn.size.md', defaultMessage: 'Médio' }),
+    intl.formatMessage({
+      id: 'obs.hero.btn.size.md',
+      defaultMessage: 'Médio',
+    }),
   ],
   [
     'lg',
-    intl.formatMessage({ id: 'obs.hero.btn.size.lg', defaultMessage: 'Grande' }),
+    intl.formatMessage({
+      id: 'obs.hero.btn.size.lg',
+      defaultMessage: 'Grande',
+    }),
   ],
 ];
 

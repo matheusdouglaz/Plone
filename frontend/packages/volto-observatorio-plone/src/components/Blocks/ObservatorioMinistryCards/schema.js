@@ -34,7 +34,8 @@ const messages = defineMessages({
   },
   cardsDescription: {
     id: 'observatorio.block.ministryCards.cardsDescription',
-    defaultMessage: 'Adicione ou reordene os cartões; cada um tem link e destaques próprios.',
+    defaultMessage:
+      'Adicione ou reordene os cartões; cada um tem link e destaques próprios.',
   },
   cardsSource: {
     id: 'observatorio.block.ministryCards.cardsSource',
@@ -74,14 +75,8 @@ const messages = defineMessages({
 });
 
 const cardsSourceChoices = (intl) => [
-  [
-    'local',
-    intl.formatMessage(messages.cardsSourceLocal),
-  ],
-  [
-    'global',
-    intl.formatMessage(messages.cardsSourceGlobal),
-  ],
+  ['local', intl.formatMessage(messages.cardsSourceLocal)],
+  ['global', intl.formatMessage(messages.cardsSourceGlobal)],
 ];
 
 const columnsChoices = (intl) => [
@@ -149,7 +144,9 @@ export default function ObservatorioMinistryCardsSchema({ intl }) {
       },
       showSearchAndFilters: {
         title: intl.formatMessage(messages.showSearchAndFilters),
-        description: intl.formatMessage(messages.showSearchAndFiltersDescription),
+        description: intl.formatMessage(
+          messages.showSearchAndFiltersDescription,
+        ),
         type: 'boolean',
         default: false,
       },

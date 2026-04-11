@@ -16,7 +16,10 @@ const CACHE_EMPTY_MS = 60 * 1000;
 function stripHtml(html) {
   if (!html || typeof html !== 'string') return '';
   if (typeof document === 'undefined') {
-    return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    return html
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
   }
   const doc = new DOMParser().parseFromString(html, 'text/html');
   return (doc.body.textContent || '').replace(/\s+/g, ' ').trim();
@@ -38,7 +41,10 @@ function enclosureUrl(item) {
 }
 
 function normalizeItem(raw, feed) {
-  const thumb = raw.thumbnail || enclosureUrl(raw) || firstImageFromHtml(raw.description || '');
+  const thumb =
+    raw.thumbnail ||
+    enclosureUrl(raw) ||
+    firstImageFromHtml(raw.description || '');
   return {
     id: `${feed.id}-${raw.link || raw.title || Math.random()}`,
     title: raw.title || '',
@@ -75,11 +81,11 @@ function parseAtomEntries(doc, feed) {
       }
     }
     const pubDate =
-      getTagText(node, 'updated') || getTagText(node, 'published') || getTagText(node, 'modified');
+      getTagText(node, 'updated') ||
+      getTagText(node, 'published') ||
+      getTagText(node, 'modified');
     const description =
-      getTagText(node, 'summary') ||
-      getTagText(node, 'content') ||
-      '';
+      getTagText(node, 'summary') || getTagText(node, 'content') || '';
     const raw = {
       title,
       link: link || '#',
@@ -117,7 +123,10 @@ function parseRssXmlString(xmlText, feed) {
     const pubDate = getTagText(node, 'pubDate') || getTagText(node, 'date');
     let description = getTagText(node, 'description');
     if (!description) {
-      const desc = node.getElementsByTagNameNS('http://purl.org/rss/1.0/modules/content/', 'encoded')[0];
+      const desc = node.getElementsByTagNameNS(
+        'http://purl.org/rss/1.0/modules/content/',
+        'encoded',
+      )[0];
       description = desc?.textContent || '';
     }
     const enc = node.getElementsByTagName('enclosure')[0];
@@ -194,7 +203,9 @@ async function fetchXmlViaPloneService(rssUrl, serviceBaseUrl, opts = {}) {
       try {
         data = JSON.parse(text);
       } catch (e) {
-        rssDebugLog(rssDebug, 'Plone RSS: JSON inválido', { message: e?.message });
+        rssDebugLog(rssDebug, 'Plone RSS: JSON inválido', {
+          message: e?.message,
+        });
       }
     }
 
@@ -213,7 +224,9 @@ async function fetchXmlViaPloneService(rssUrl, serviceBaseUrl, opts = {}) {
       return text;
     }
   } catch (e) {
-    rssDebugLog(rssDebug, 'Plone RSS: exceção', { message: e?.message || String(e) });
+    rssDebugLog(rssDebug, 'Plone RSS: exceção', {
+      message: e?.message || String(e),
+    });
     return null;
   }
   return null;
@@ -249,7 +262,10 @@ async function fetchOneFeed(feed, options = {}) {
 
   const parsed = parseRssXmlString(xml, feed);
   if (parsed.length && rssDebug) {
-    rssDebugLog(rssDebug, 'feed OK', { feedId: feed?.id, items: parsed.length });
+    rssDebugLog(rssDebug, 'feed OK', {
+      feedId: feed?.id,
+      items: parsed.length,
+    });
   }
   return parsed;
 }

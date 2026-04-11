@@ -40,7 +40,8 @@ const messages = defineMessages({
   },
   pathHint: {
     id: 'observatorio.block.newsFeed.pathHint',
-    defaultMessage: 'Ex.: /noticias — página onde está o bloco em modo listagem.',
+    defaultMessage:
+      'Ex.: /noticias — página onde está o bloco em modo listagem.',
   },
 });
 

@@ -26,8 +26,8 @@ function useMinistryFeeds() {
 
 function usePloneRssServiceUrl() {
   const apiPath = useSelector((state) => state.config?.settings?.apiPath);
-  const legacyTraverse = useSelector(
-    (state) => Boolean(state.config?.settings?.legacyTraverse),
+  const legacyTraverse = useSelector((state) =>
+    Boolean(state.config?.settings?.legacyTraverse),
   );
   const serviceName = useSelector(
     (state) =>
@@ -101,7 +101,12 @@ FeaturedStory.propTypes = {
 function NewsCard({ item }) {
   const hasImg = Boolean(item.image);
   return (
-    <a className="obs-news-card" href={item.link} target="_blank" rel="noopener noreferrer">
+    <a
+      className="obs-news-card"
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="obs-news-card__media">
         {hasImg ? (
           <img src={item.image} alt={item.title} loading="lazy" />
@@ -281,7 +286,10 @@ const ObservatorioNewsFeedView = ({ data, className, style }) => {
                 />
               </div>
               <div className="obs-news__toolbar-field">
-                <label className="obs-news__filter-label" htmlFor="obs-news-sort">
+                <label
+                  className="obs-news__filter-label"
+                  htmlFor="obs-news-sort"
+                >
                   Ordenar
                 </label>
                 <Dropdown
@@ -309,9 +317,10 @@ const ObservatorioNewsFeedView = ({ data, className, style }) => {
             {!featured ? (
               <div className="obs-news__empty obs-news__empty--block">
                 <p>
-                  Não há notícias. 404 no serviço Plone @observatorio-rss-feed: confira se o
-                  pacote está no site que o proxy usa (ex.: :8080/Plone), RAZZLE_API_PATH e
-                  CORS. Atualize a página ou tente de novo.
+                  Não há notícias. 404 no serviço Plone @observatorio-rss-feed:
+                  confira se o pacote está no site que o proxy usa (ex.:
+                  :8080/Plone), RAZZLE_API_PATH e CORS. Atualize a página ou
+                  tente de novo.
                 </p>
                 <button
                   type="button"
@@ -338,7 +347,10 @@ const ObservatorioNewsFeedView = ({ data, className, style }) => {
                 ) : null}
                 {moreLinkPath ? (
                   <div className="obs-news__cta">
-                    <UniversalLink className="obs-news__more-btn" href={moreLinkPath}>
+                    <UniversalLink
+                      className="obs-news__more-btn"
+                      href={moreLinkPath}
+                    >
                       {moreLinkLabel}
                     </UniversalLink>
                   </div>

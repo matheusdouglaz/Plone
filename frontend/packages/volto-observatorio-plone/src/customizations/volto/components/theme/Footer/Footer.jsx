@@ -50,8 +50,7 @@ const Footer = ({ intl }) => {
     shallowEqual,
   );
 
-  const footerBrand =
-    siteTitle || intl.formatMessage(messages.brandFallback);
+  const footerBrand = siteTitle || intl.formatMessage(messages.brandFallback);
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {

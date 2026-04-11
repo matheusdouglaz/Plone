@@ -34,7 +34,8 @@ export const ministryCardsSiteList = [
     description:
       'Coordena as ações do governo e articula políticas entre ministérios.',
     highlightsLabel: 'Destaques',
-    highlights: 'Coordenação governamental\nPolíticas públicas\nRelações institucionais',
+    highlights:
+      'Coordenação governamental\nPolíticas públicas\nRelações institucionais',
     buttonLabel: 'Acessar Portal',
     href: 'https://www.gov.br/casacivil/',
   },
@@ -58,7 +59,8 @@ export const ministryCardsSiteList = [
     description:
       'Atua na segurança institucional e assessoramento direto ao Presidente.',
     highlightsLabel: 'Destaques',
-    highlights: 'Segurança da informação\nGestão de crises\nProteção de autoridades',
+    highlights:
+      'Segurança da informação\nGestão de crises\nProteção de autoridades',
     buttonLabel: 'Acessar Portal',
     href: 'https://www.gov.br/gsi/',
   },
@@ -67,8 +69,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#dcfce7',
     accentColor: '#15803d',
     title: 'Ministério da Agricultura e Pecuária',
-    description:
-      'Regula e fomenta o agronegócio brasileiro.',
+    description: 'Regula e fomenta o agronegócio brasileiro.',
     themes: 'economia, agro',
     searchKeywords: 'mapa, agricultura, pecuária, agronegócio',
     highlightsLabel: 'Destaques',
@@ -81,8 +82,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f2fe',
     accentColor: '#0284c7',
     title: 'Ministério da Ciência, Tecnologia e Inovação',
-    description:
-      'Promove ciência, pesquisa e inovação tecnológica.',
+    description: 'Promove ciência, pesquisa e inovação tecnológica.',
     highlightsLabel: 'Destaques',
     highlights: 'Pesquisa científica\nInovação\nTecnologia',
     buttonLabel: 'Acessar Portal',
@@ -93,8 +93,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#f1f5f9',
     accentColor: '#334155',
     title: 'Ministério das Cidades',
-    description:
-      'Responsável por políticas urbanas e habitação.',
+    description: 'Responsável por políticas urbanas e habitação.',
     highlightsLabel: 'Destaques',
     highlights: 'Habitação\nMobilidade urbana\nSaneamento',
     buttonLabel: 'Acessar Portal',
@@ -105,8 +104,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#eef2ff',
     accentColor: '#4338ca',
     title: 'Ministério das Comunicações',
-    description:
-      'Regula telecomunicações e serviços de comunicação.',
+    description: 'Regula telecomunicações e serviços de comunicação.',
     highlightsLabel: 'Destaques',
     highlights: 'Inclusão digital\nRadiodifusão\nInternet',
     buttonLabel: 'Acessar Portal',
@@ -117,8 +115,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fce7f3',
     accentColor: '#be185d',
     title: 'Ministério da Cultura',
-    description:
-      'Promove políticas culturais e incentivo às artes.',
+    description: 'Promove políticas culturais e incentivo às artes.',
     highlightsLabel: 'Destaques',
     highlights: 'Lei Rouanet\nPatrimônio cultural\nArtes',
     buttonLabel: 'Acessar Portal',
@@ -129,8 +126,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e5e7eb',
     accentColor: '#374151',
     title: 'Ministério da Defesa',
-    description:
-      'Coordena as Forças Armadas do Brasil.',
+    description: 'Coordena as Forças Armadas do Brasil.',
     highlightsLabel: 'Destaques',
     highlights: 'Exército\nMarinha\nAeronáutica',
     buttonLabel: 'Acessar Portal',
@@ -141,8 +137,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fef9c3',
     accentColor: '#ca8a04',
     title: 'Ministério do Desenvolvimento e Assistência Social',
-    description:
-      'Responsável por políticas sociais e combate à pobreza.',
+    description: 'Responsável por políticas sociais e combate à pobreza.',
     themes: 'social, desenvolvimento, assistência',
     searchKeywords: 'mds, bolsa família, cadastro único, assistência social',
     highlightsLabel: 'Destaques',
@@ -155,8 +150,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f7fa',
     accentColor: '#0f766e',
     title: 'Ministério do Desenvolvimento, Indústria, Comércio e Serviços',
-    description:
-      'Fomenta indústria, comércio e serviços.',
+    description: 'Fomenta indústria, comércio e serviços.',
     themes: 'economia, indústria, comércio',
     searchKeywords: 'mdic, indústria, comércio exterior',
     highlightsLabel: 'Destaques',
@@ -169,8 +163,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#f3e8ff',
     accentColor: '#7c3aed',
     title: 'Ministério dos Direitos Humanos e da Cidadania',
-    description:
-      'Promove direitos humanos e cidadania.',
+    description: 'Promove direitos humanos e cidadania.',
     themes: 'social, direitos humanos',
     searchKeywords: 'mdhc, mdh, direitos humanos',
     highlightsLabel: 'Destaques',
@@ -197,8 +190,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#ecfccb',
     accentColor: '#65a30d',
     title: 'Ministério do Empreendedorismo',
-    description:
-      'Apoia micro e pequenas empresas.',
+    description: 'Apoia micro e pequenas empresas.',
     themes: 'economia, empreendedorismo',
     searchKeywords: 'mei, microempresa, pequenos negócios',
     highlightsLabel: 'Destaques',
@@ -211,8 +203,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fef3c7',
     accentColor: '#b45309',
     title: 'Ministério do Esporte',
-    description:
-      'Promove políticas esportivas.',
+    description: 'Promove políticas esportivas.',
     highlightsLabel: 'Destaques',
     highlights: 'Esporte de base\nAlto rendimento\nInclusão',
     buttonLabel: 'Acessar Portal',
@@ -223,8 +214,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#dcfce7',
     accentColor: '#16a34a',
     title: 'Ministério da Fazenda',
-    description:
-      'Gerencia finanças públicas e política econômica.',
+    description: 'Gerencia finanças públicas e política econômica.',
     themes: 'economia, finanças',
     searchKeywords: 'fazenda, tesouro, receita federal, política fiscal',
     highlightsLabel: 'Destaques',
@@ -237,8 +227,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f2fe',
     accentColor: '#0284c7',
     title: 'Ministério da Gestão e da Inovação',
-    description:
-      'Moderniza a administração pública federal.',
+    description: 'Moderniza a administração pública federal.',
     highlightsLabel: 'Destaques',
     highlights: 'Gov.br\nGestão pública\nTransformação digital',
     buttonLabel: 'Acessar Portal',
@@ -249,8 +238,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fef3c7',
     accentColor: '#ca8a04',
     title: 'Ministério da Igualdade Racial',
-    description:
-      'Promove igualdade racial e combate à discriminação.',
+    description: 'Promove igualdade racial e combate à discriminação.',
     highlightsLabel: 'Destaques',
     highlights: 'Políticas afirmativas\nInclusão\nCombate ao racismo',
     buttonLabel: 'Acessar Portal',
@@ -261,8 +249,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f7fa',
     accentColor: '#0f766e',
     title: 'Ministério da Integração e Desenvolvimento Regional',
-    description:
-      'Desenvolve regiões e reduz desigualdades.',
+    description: 'Desenvolve regiões e reduz desigualdades.',
     highlightsLabel: 'Destaques',
     highlights: 'Defesa civil\nDesenvolvimento regional\nInfraestrutura',
     buttonLabel: 'Acessar Portal',
@@ -273,8 +260,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fee2e2',
     accentColor: '#dc2626',
     title: 'Ministério da Justiça e Segurança Pública',
-    description:
-      'Cuida da segurança pública e do sistema de justiça.',
+    description: 'Cuida da segurança pública e do sistema de justiça.',
     highlightsLabel: 'Destaques',
     highlights: 'Polícia Federal\nSegurança pública\nCombate ao crime',
     buttonLabel: 'Acessar Portal',
@@ -285,8 +271,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#dcfce7',
     accentColor: '#15803d',
     title: 'Ministério do Meio Ambiente',
-    description:
-      'Protege o meio ambiente e promove sustentabilidade.',
+    description: 'Protege o meio ambiente e promove sustentabilidade.',
     highlightsLabel: 'Destaques',
     highlights: 'Clima\nBiodiversidade\nSustentabilidade',
     buttonLabel: 'Acessar Portal',
@@ -297,8 +282,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#f1f5f9',
     accentColor: '#334155',
     title: 'Ministério de Minas e Energia',
-    description:
-      'Gerencia recursos energéticos e minerais.',
+    description: 'Gerencia recursos energéticos e minerais.',
     highlightsLabel: 'Destaques',
     highlights: 'Energia\nPetróleo e gás\nMineração',
     buttonLabel: 'Acessar Portal',
@@ -309,8 +293,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fce7f3',
     accentColor: '#be185d',
     title: 'Ministério das Mulheres',
-    description:
-      'Promove direitos das mulheres.',
+    description: 'Promove direitos das mulheres.',
     highlightsLabel: 'Destaques',
     highlights: 'Combate à violência\nIgualdade\nPolíticas públicas',
     buttonLabel: 'Acessar Portal',
@@ -321,8 +304,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0e7ff',
     accentColor: '#3730a3',
     title: 'Ministério do Planejamento e Orçamento',
-    description:
-      'Coordena planejamento e orçamento federal.',
+    description: 'Coordena planejamento e orçamento federal.',
     highlightsLabel: 'Destaques',
     highlights: 'Orçamento\nPlanejamento\nPPA',
     buttonLabel: 'Acessar Portal',
@@ -333,8 +315,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f2fe',
     accentColor: '#0284c7',
     title: 'Ministério de Portos e Aeroportos',
-    description:
-      'Administra infraestrutura portuária e aeroportuária.',
+    description: 'Administra infraestrutura portuária e aeroportuária.',
     highlightsLabel: 'Destaques',
     highlights: 'Portos\nAeroportos\nLogística',
     buttonLabel: 'Acessar Portal',
@@ -345,8 +326,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fef9c3',
     accentColor: '#a16207',
     title: 'Ministério dos Povos Indígenas',
-    description:
-      'Defende os direitos dos povos indígenas.',
+    description: 'Defende os direitos dos povos indígenas.',
     highlightsLabel: 'Destaques',
     highlights: 'Terras indígenas\nCultura\nProteção',
     buttonLabel: 'Acessar Portal',
@@ -357,8 +337,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e5e7eb',
     accentColor: '#374151',
     title: 'Ministério da Previdência Social',
-    description:
-      'Gerencia benefícios previdenciários.',
+    description: 'Gerencia benefícios previdenciários.',
     themes: 'social, previdência',
     searchKeywords: 'inss, aposentadoria, benefícios',
     highlightsLabel: 'Destaques',
@@ -371,8 +350,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f2fe',
     accentColor: '#0284c7',
     title: 'Ministério das Relações Exteriores',
-    description:
-      'Responsável pela política externa do Brasil.',
+    description: 'Responsável pela política externa do Brasil.',
     highlightsLabel: 'Destaques',
     highlights: 'Diplomacia\nEmbaixadas\nRelações internacionais',
     buttonLabel: 'Acessar Portal',
@@ -397,8 +375,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fef3c7',
     accentColor: '#b45309',
     title: 'Secretaria de Comunicação Social',
-    description:
-      'Coordena a comunicação institucional do governo.',
+    description: 'Coordena a comunicação institucional do governo.',
     highlightsLabel: 'Destaques',
     highlights: 'Campanhas\nImprensa\nComunicação digital',
     buttonLabel: 'Acessar Portal',
@@ -409,8 +386,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#ecfccb',
     accentColor: '#65a30d',
     title: 'Secretaria-Geral da Presidência',
-    description:
-      'Articula participação social e diálogo com a sociedade.',
+    description: 'Articula participação social e diálogo com a sociedade.',
     highlightsLabel: 'Destaques',
     highlights: 'Participação social\nConselhos\nDiálogo',
     buttonLabel: 'Acessar Portal',
@@ -421,10 +397,10 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0e7ff',
     accentColor: '#3730a3',
     title: 'Secretaria de Relações Institucionais',
-    description:
-      'Coordena relações com o Congresso e entes federativos.',
+    description: 'Coordena relações com o Congresso e entes federativos.',
     highlightsLabel: 'Destaques',
-    highlights: 'Articulação política\nGovernabilidade\nRelações institucionais',
+    highlights:
+      'Articulação política\nGovernabilidade\nRelações institucionais',
     buttonLabel: 'Acessar Portal',
     href: 'https://www.gov.br/sri/',
   },
@@ -433,8 +409,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#f1f5f9',
     accentColor: '#334155',
     title: 'Ministério dos Transportes',
-    description:
-      'Responsável pela infraestrutura de transportes terrestres.',
+    description: 'Responsável pela infraestrutura de transportes terrestres.',
     highlightsLabel: 'Destaques',
     highlights: 'Rodovias\nFerrovias\nLogística',
     buttonLabel: 'Acessar Portal',
@@ -445,8 +420,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#fef3c7',
     accentColor: '#b45309',
     title: 'Ministério do Trabalho e Emprego',
-    description:
-      'Regula relações de trabalho e políticas de emprego.',
+    description: 'Regula relações de trabalho e políticas de emprego.',
     themes: 'social, trabalho',
     searchKeywords: 'mte, carteira de trabalho, emprego',
     highlightsLabel: 'Destaques',
@@ -459,8 +433,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#e0f2fe',
     accentColor: '#0284c7',
     title: 'Ministério do Turismo',
-    description:
-      'Promove o turismo nacional e internacional.',
+    description: 'Promove o turismo nacional e internacional.',
     highlightsLabel: 'Destaques',
     highlights: 'Destinos\nEventos\nPromoção',
     buttonLabel: 'Acessar Portal',
@@ -471,8 +444,7 @@ export const ministryCardsSiteList = [
     iconBgColor: '#dcfce7',
     accentColor: '#15803d',
     title: 'Ministério da Pesca e Aquicultura',
-    description:
-      'Desenvolve a pesca e aquicultura.',
+    description: 'Desenvolve a pesca e aquicultura.',
     highlightsLabel: 'Destaques',
     highlights: 'Produção pesqueira\nSustentabilidade\nIncentivo',
     buttonLabel: 'Acessar Portal',

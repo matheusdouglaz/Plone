@@ -21,7 +21,10 @@ const Edit = (props) => {
     blocksErrors,
   } = props;
 
-  const schema = useMemo(() => ObservatorioMinistryCardsSchema({ intl }), [intl]);
+  const schema = useMemo(
+    () => ObservatorioMinistryCardsSchema({ intl }),
+    [intl],
+  );
 
   return (
     <>

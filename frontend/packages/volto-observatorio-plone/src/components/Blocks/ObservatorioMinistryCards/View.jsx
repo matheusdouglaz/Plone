@@ -84,9 +84,7 @@ function deriveMinistryCategory(card) {
   const t = (card?.title || '').trim();
   if (/^ministério/i.test(t)) return 'Ministérios';
   if (/^secretaria/i.test(t)) return 'Secretarias e órgãos centrais';
-  if (
-    /^(advocacia|casa civil|controladoria|gabinete de segurança)/i.test(t)
-  ) {
+  if (/^(advocacia|casa civil|controladoria|gabinete de segurança)/i.test(t)) {
     return 'Órgãos de apoio à Presidência';
   }
   return 'Demais órgãos';
@@ -193,7 +191,9 @@ function MinistryCard({ card }) {
       ) : null}
       {bullets.length > 0 ? (
         <div className="obs-ministry-card__highlights">
-          <p className="obs-ministry-card__highlights-label">{highlightsLabel}</p>
+          <p className="obs-ministry-card__highlights-label">
+            {highlightsLabel}
+          </p>
           <ul className="obs-ministry-card__list">
             {bullets.map((line, idx) => (
               <li key={`destaque-${idx}-${line.slice(0, 40)}`}>{line}</li>
@@ -228,9 +228,7 @@ function MinistryFiltersToolbar({
   intl,
 }) {
   const hasFilters =
-    searchQuery.trim() !== '' ||
-    themeFilter !== '' ||
-    sortOrder !== 'default';
+    searchQuery.trim() !== '' || themeFilter !== '' || sortOrder !== 'default';
 
   return (
     <div
@@ -262,9 +260,7 @@ function MinistryFiltersToolbar({
             onChange={(e) => onThemeChange(e.target.value)}
             aria-label={intl.formatMessage(messages.themeAll)}
           >
-            <option value="">
-              {intl.formatMessage(messages.themeAll)}
-            </option>
+            <option value="">{intl.formatMessage(messages.themeAll)}</option>
             {themeOptions.map((c) => (
               <option key={c} value={c}>
                 {c}
@@ -422,7 +418,8 @@ const ObservatorioMinistryCardsView = ({ data, className, style }) => {
         ? 'obs-ministry-grid--auto'
         : 'obs-ministry-grid--cols-3';
 
-  const toolbarFirst = showSearchAndFilters && cards.length > 0 && !sectionTitle;
+  const toolbarFirst =
+    showSearchAndFilters && cards.length > 0 && !sectionTitle;
 
   return (
     <section

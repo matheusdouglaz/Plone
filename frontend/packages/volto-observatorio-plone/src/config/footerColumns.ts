@@ -29,7 +29,9 @@ export const footerColumns: FooterColumn[] = [
     links:
       ministeriosLinks.length > 0
         ? ministeriosLinks
-        : placeholder('Inclua órgãos em ministeriosLinks (institutionalLinks.ts)'),
+        : placeholder(
+            'Inclua órgãos em ministeriosLinks (institutionalLinks.ts)',
+          ),
   },
   {
     id: 'acesso-informacao',
@@ -53,7 +55,9 @@ export const footerColumns: FooterColumn[] = [
   {
     id: 'observatorio',
     title: 'Observatório',
-    links: placeholder('Páginas “Quem somos”, equipe, etc. (crie no CMS e substitua)'),
+    links: placeholder(
+      'Páginas “Quem somos”, equipe, etc. (crie no CMS e substitua)',
+    ),
   },
   {
     id: 'documentacao',

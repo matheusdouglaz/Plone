@@ -37,7 +37,10 @@ function resolveLegacy(data) {
     bodyAlign: nonEmptyOr(data?.bodyAlign ?? legacyAlign, 'left'),
     buttonsAlign: nonEmptyOr(data?.buttonsAlign ?? legacyAlign, 'left'),
     titleColor: nonEmptyOr(data?.titleColor ?? legacyColor, '#ffffff'),
-    descriptionColor: nonEmptyOr(data?.descriptionColor ?? legacyColor, '#ffffff'),
+    descriptionColor: nonEmptyOr(
+      data?.descriptionColor ?? legacyColor,
+      '#ffffff',
+    ),
   };
 }
 
@@ -141,7 +144,10 @@ const ObservatorioHeroView = ({ data, className, style }) => {
           </p>
         ) : null}
 
-        <ObservatorioCtaButtonRow data={data} classNamePrefix="observatorio-hero" />
+        <ObservatorioCtaButtonRow
+          data={data}
+          classNamePrefix="observatorio-hero"
+        />
       </div>
     </section>
   );

@@ -1,5 +1,8 @@
 !.vscode
 node_modules
+
+# Windows — metadados “Mark of the Web” (não versionar)
+**/*Zone.Identifier
 /core
 /public
 *.mo

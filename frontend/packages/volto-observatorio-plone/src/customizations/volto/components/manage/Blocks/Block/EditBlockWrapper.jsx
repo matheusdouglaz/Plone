@@ -123,7 +123,9 @@ const EditBlockWrapper = (props) => {
 
   const handlePasteBlocks = useCallback(
     (e) => {
-      const mode = Object.keys(blocksClipboard).includes('cut') ? 'cut' : 'copy';
+      const mode = Object.keys(blocksClipboard).includes('cut')
+        ? 'cut'
+        : 'copy';
       const blocksData = blocksClipboard[mode] || [];
       const cloneWithIds = blocksData
         .filter(([blockId, blockData]) => blockId && !!blockData?.['@type'])

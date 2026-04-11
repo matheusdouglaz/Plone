@@ -162,15 +162,24 @@ const bgModeChoices = (intl) => [
 const alignChoices = (intl) => [
   [
     'left',
-    intl.formatMessage({ id: 'obs.hero.align.left', defaultMessage: 'Esquerda' }),
+    intl.formatMessage({
+      id: 'obs.hero.align.left',
+      defaultMessage: 'Esquerda',
+    }),
   ],
   [
     'center',
-    intl.formatMessage({ id: 'obs.hero.align.center', defaultMessage: 'Centro' }),
+    intl.formatMessage({
+      id: 'obs.hero.align.center',
+      defaultMessage: 'Centro',
+    }),
   ],
   [
     'right',
-    intl.formatMessage({ id: 'obs.hero.align.right', defaultMessage: 'Direita' }),
+    intl.formatMessage({
+      id: 'obs.hero.align.right',
+      defaultMessage: 'Direita',
+    }),
   ],
 ];
 
@@ -209,15 +218,24 @@ const buttonsAlignChoices = (intl) => [
 const buttonSizeChoices = (intl) => [
   [
     'sm',
-    intl.formatMessage({ id: 'obs.hero.btn.size.sm', defaultMessage: 'Pequeno' }),
+    intl.formatMessage({
+      id: 'obs.hero.btn.size.sm',
+      defaultMessage: 'Pequeno',
+    }),
   ],
   [
     'md',
-    intl.formatMessage({ id: 'obs.hero.btn.size.md', defaultMessage: 'Médio' }),
+    intl.formatMessage({
+      id: 'obs.hero.btn.size.md',
+      defaultMessage: 'Médio',
+    }),
   ],
   [
     'lg',
-    intl.formatMessage({ id: 'obs.hero.btn.size.lg', defaultMessage: 'Grande' }),
+    intl.formatMessage({
+      id: 'obs.hero.btn.size.lg',
+      defaultMessage: 'Grande',
+    }),
   ],
 ];
 
@@ -270,25 +288,49 @@ const buttonGapChoices = (intl) => [
 ];
 
 const titleSizeChoices = (intl) => [
-  ['sm', intl.formatMessage({ id: 'obs.hero.title.sm', defaultMessage: 'Pequeno' })],
-  ['md', intl.formatMessage({ id: 'obs.hero.title.md', defaultMessage: 'Médio' })],
-  ['lg', intl.formatMessage({ id: 'obs.hero.title.lg', defaultMessage: 'Grande' })],
+  [
+    'sm',
+    intl.formatMessage({ id: 'obs.hero.title.sm', defaultMessage: 'Pequeno' }),
+  ],
+  [
+    'md',
+    intl.formatMessage({ id: 'obs.hero.title.md', defaultMessage: 'Médio' }),
+  ],
+  [
+    'lg',
+    intl.formatMessage({ id: 'obs.hero.title.lg', defaultMessage: 'Grande' }),
+  ],
   [
     'xl',
-    intl.formatMessage({ id: 'obs.hero.title.xl', defaultMessage: 'Muito grande' }),
+    intl.formatMessage({
+      id: 'obs.hero.title.xl',
+      defaultMessage: 'Muito grande',
+    }),
   ],
 ];
 
 const bodySizeChoices = (intl) => [
-  ['sm', intl.formatMessage({ id: 'obs.hero.body.sm', defaultMessage: 'Pequeno' })],
-  ['md', intl.formatMessage({ id: 'obs.hero.body.md', defaultMessage: 'Médio' })],
-  ['lg', intl.formatMessage({ id: 'obs.hero.body.lg', defaultMessage: 'Grande' })],
+  [
+    'sm',
+    intl.formatMessage({ id: 'obs.hero.body.sm', defaultMessage: 'Pequeno' }),
+  ],
+  [
+    'md',
+    intl.formatMessage({ id: 'obs.hero.body.md', defaultMessage: 'Médio' }),
+  ],
+  [
+    'lg',
+    intl.formatMessage({ id: 'obs.hero.body.lg', defaultMessage: 'Grande' }),
+  ],
 ];
 
 const paddingChoices = (intl) => [
   [
     'compact',
-    intl.formatMessage({ id: 'obs.hero.py.compact', defaultMessage: 'Compacto' }),
+    intl.formatMessage({
+      id: 'obs.hero.py.compact',
+      defaultMessage: 'Compacto',
+    }),
   ],
   [
     'normal',

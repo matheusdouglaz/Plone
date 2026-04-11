@@ -1,5 +1,7 @@
 import { defineMessages } from 'react-intl';
 
+import { ministryCardsSiteList } from '../../../config/ministryCardsSite.js';
+
 const messages = defineMessages({
   cardTitle: {
     id: 'observatorio.block.ministryCards.card.title',
@@ -89,8 +91,6 @@ const messages = defineMessages({
       'Separadas por vírgula. Ex.: mds, mec. Não aparecem no cartão; ajudam a achar o órgão na busca (siglas, apelidos).',
   },
 });
-
-import { ministryCardsSiteList } from '../../../config/ministryCardsSite.js';
 
 /** Pré-visualização padrão do bloco (mesmos dados que a lista central inicial). */
 export function defaultMinistryCards() {
