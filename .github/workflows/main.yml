@@ -44,7 +44,8 @@ jobs:
         volto-version: ${{ needs.config.outputs.volto-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
     permissions:
-      contents: read
+      # write: push na branch gh-pages (Storybook — plone/meta + github-pages-deploy-action)
+      contents: write
       packages: write
 
   report:
