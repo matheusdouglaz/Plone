@@ -15,10 +15,10 @@
     - No navegador (Rede), a chamada GET a .../@observatorio-rss-feed?url=... deve ser 200
       com JSON {"raw": "..."}.
 
-    Substitua o primeiro valor de allow_origin pelo domínio HTTPS real do frontend em produção.
+    Substitua allow_origin pelos domínios HTTPS reais do Volto (vários separados por vírgula).
   -->
   <plone:CORSPolicy
-      allow_origin="https://volto.observatorio.gov.br"
+      allow_origin="https://volto.observatorio.gov.br,https://plone-front.onrender.com"
       allow_credentials="true"
       allow_methods="DELETE,GET,OPTIONS,PATCH,POST,PUT"
       expose_headers="Content-Length"
